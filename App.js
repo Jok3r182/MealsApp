@@ -6,9 +6,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import MealsOverviewScreen from "./screens/MealsOverviewScreen";
 import MealDetailScreen from "./screens/MealDetailScreen";
 
-const Stack = createNativeStackNavigator();
 
+const Stack = createNativeStackNavigator();
 //default settings are set in navigator part
+
+
+
 export default function App() {
   return (
     <>
@@ -29,21 +32,14 @@ export default function App() {
               title: "Meals Categories",
             }}
           />
-          <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} 
-          // options={({route, navigation})=>{
-          //   const catId = route.params.categoryId
-          //   return {
-          //       title: catId
-          //   }
-          // }}
-          />
+          <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
           <Stack.Screen
             name="MealDetail"
             component={MealDetailScreen}
-            options = {{
+            options={{
               headerRight: () => {
-                return <Button title="Tap me!"/>
-              }
+                return <Button title="Tap me!" />;
+              },
             }}
           />
         </Stack.Navigator>
